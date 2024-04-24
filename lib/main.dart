@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Parallax Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -39,7 +40,7 @@ class _MyHomePageState extends State<MyHomePage> {
   double rateEight = 90;
 
   String asset = '';
-  double top = 0;
+  // double top = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -160,11 +161,11 @@ class ParallaxWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Positioned(
-      left: -45,
+      left: 0,
       top: top,
       child: SizedBox(
         height: 550,
-        width: 900,
+        width: MediaQuery.of(context).size.width,
         child: Image.asset("assets/images/$asset.png", fit: BoxFit.cover),
       ),
     );
